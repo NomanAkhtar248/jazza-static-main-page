@@ -159,9 +159,9 @@ const NavMenu = () => {
                     >
                       <Link
                         href="#"
-                        className={`flex items-center gap-2 whitespace-nowrap hover:bg-transparent hover:!text-[#7f19a0] ${
+                        className={`flex items-center gap-2 whitespace-nowrap !bg-transparent hover:bg-transparent hover:!text-[#7f19a0] ${
                           isLast
-                            ? "text-[#7f19a0] hover:bg-transparent hover:!text-[#7f19a0]"
+                            ? "!bg-transparent text-[#7f19a0] hover:bg-transparent hover:!text-[#7f19a0]"
                             : ""
                         }`}
                       >

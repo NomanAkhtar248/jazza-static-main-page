@@ -70,7 +70,6 @@ const Navbar = () => {
 
           {/*  Icons only for xl and up */}
           <div className="hidden gap-4 xl:flex">
-            <Help />
             <NavIcons />
           </div>
         </nav>

@@ -12,7 +12,7 @@ const Help = () => {
           size={24}
           className="text-gray-700 transition-transform duration-300 group-hover:scale-110 group-hover:text-[#c82d8c]"
         />
-        <div className="hidden flex-col items-start lg:flex">
+        <div className="hidden flex-col items-start xl:flex">
           <span className="cursor-pointer text-xs font-medium text-gray-800 group-hover:text-[#c82d8c]">
             Need Help?
           </span>
