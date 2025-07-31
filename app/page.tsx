@@ -1,4 +1,4 @@
-import Header from "@/components/castome/header";
+import Header from "@/components/castume/header";
 import React from "react";
 
 const Home = () => {

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,64 +16,86 @@ import NavMenuLink from "../nav-menu-link";
 
 const categories = [
   {
+    id: 1,
     name: "Hot Deals",
     imageUrl: "/hotdeal1.png",
   },
   {
+    id: 2,
     name: "iPhone",
     items: [
-      "iPhone 15 Series",
-      "iPhone 14 Series",
-      "iPhone 13 Series",
-      "iPhone 12 Series",
-      "iPhone 11 Series",
-      "iPhone SE Series",
-      "iPhone X Series",
-      "iPhone 8 Series",
-      "iPhone 7 Series",
+      { id: 201, name: "iPhone 15 Series" },
+      { id: 202, name: "iPhone 14 Series" },
+      { id: 203, name: "iPhone 13 Series" },
+      { id: 204, name: "iPhone 12 Series" },
+      { id: 205, name: "iPhone 11 Series" },
+      { id: 206, name: "iPhone SE Series" },
+      { id: 207, name: "iPhone X Series" },
+      { id: 208, name: "iPhone 8 Series" },
+      { id: 209, name: "iPhone 7 Series" },
     ],
   },
   {
+    id: 3,
     name: "Samsung",
     items: [
-      "Galaxy 8 Series",
-      "Galaxy S10 Series",
-      "Galaxy S20 Series",
-      "Galaxy S21 Series",
-      "Galaxy S22 Series",
-      "Galaxy S23 Series",
-      "Galaxy Note Series",
-      "Galaxy Z Series",
+      { id: 301, name: "Galaxy 8 Series" },
+      { id: 302, name: "Galaxy S10 Series" },
+      { id: 303, name: "Galaxy S20 Series" },
+      { id: 304, name: "Galaxy S21 Series" },
+      { id: 305, name: "Galaxy S22 Series" },
+      { id: 306, name: "Galaxy S23 Series" },
+      { id: 307, name: "Galaxy Note Series" },
+      { id: 308, name: "Galaxy Z Series" },
     ],
   },
   {
+    id: 4,
     name: "MacBook",
-    items: ["Macbook Pro", "Macbook Air", "Apple iMac"],
+    items: [
+      { id: 401, name: "Macbook Pro" },
+      { id: 402, name: "Macbook Air" },
+      { id: 403, name: "Apple iMac" },
+    ],
   },
   {
+    id: 5,
     name: "Laptops",
-    items: ["Dell", "Lenovo", "HP", "Microsoft", "Acer", "Samsung"],
+    items: [
+      { id: 501, name: "Dell" },
+      { id: 502, name: "Lenovo" },
+      { id: 503, name: "HP" },
+      { id: 504, name: "Microsoft" },
+      { id: 505, name: "Acer" },
+      { id: 506, name: "Samsung" },
+    ],
   },
   {
+    id: 6,
     name: "Ipads",
     // no items
   },
   {
+    id: 7,
     name: "Apple Watches",
     // no items
   },
   {
+    id: 8,
     name: "Gaming",
     // no items
   },
   {
+    id: 9,
     name: "For Businesses",
     // no items
   },
   {
+    id: 10,
     name: "Redmi",
   },
   {
+    id: 11,
     name: "Revibe Express",
     icon: Zap,
   },
@@ -96,23 +120,25 @@ const NavMenu = () => {
 
                 if (hasItems) {
                   return (
-                    <NavigationMenuItem key={index}>
-                      <NavigationMenuTrigger className="whitespace-nowrap bg-transparent hover:!bg-transparent hover:!text-[#7f19a0] data-[state=open]:bg-transparent [&>svg]:hidden">
-                        <div className="flex items-center gap-2">
-                          <span className="font-montserrat cursor-pointer font-semibold">
-                            {category.name}
-                          </span>
-                        </div>
+                    // <NavigationMenu key={category.id}>
+                    <NavigationMenuItem key={category.id}>
+                      <NavigationMenuTrigger className="whitespace-nowrap !bg-transparent hover:!bg-transparent hover:!text-[#7f19a0] [&>svg]:hidden">
+                        <span className="font-montserrat cursor-pointer font-semibold">
+                          {category.name}
+                        </span>
                       </NavigationMenuTrigger>
 
                       {/*  Use your custom component here */}
 
-                      <NavigationMenuContent className="">
-                        <ul className="m-0 grid w-[200px] gap-2 p-0">
-                          {category.items?.map((itemName, i) => (
-                            <li key={i}>
+                      <NavigationMenuContent className="m-1">
+                        <ul
+                          // className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
+                          className="m-0 grid w-[210px] p-0 py-1"
+                        >
+                          {category.items?.map((item, i) => (
+                            <li key={item.id}>
                               <NavMenuLink
-                                itemName={itemName}
+                                itemName={item.name}
                                 isLast={i === category.items.length - 1}
                               />
                             </li>
@@ -120,12 +146,13 @@ const NavMenu = () => {
                         </ul>
                       </NavigationMenuContent>
                     </NavigationMenuItem>
+                    // </NavigationMenu>
                   );
                 }
 
                 // Else, show simple link (no dropdown at all)
                 return (
-                  <NavigationMenuItem key={index}>
+                  <NavigationMenuItem key={category.id}>
                     <NavigationMenuLink
                       asChild
                       className={navigationMenuTriggerStyle()}

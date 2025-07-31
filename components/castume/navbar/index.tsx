@@ -12,7 +12,7 @@ const Navbar = () => {
           {/*  Logo + Hamburger + Help + Icons (for sm only) */}
           <div className="flex w-full items-center justify-between sm:hidden">
             <div className="flex items-center gap-3">
-              <AlignJustify size={26} />
+              <AlignJustify size={26} className="cursor-pointer" />
               <Help />
             </div>
             <Image
@@ -30,7 +30,7 @@ const Navbar = () => {
           {/* show only on sm, md and lg screen */}
           <div className="hidden w-full items-center justify-between sm:flex xl:hidden">
             <div className="flex items-center gap-3">
-              <AlignJustify size={26} />
+              <AlignJustify size={26} className="cursor-pointer" />
               <Help />
             </div>
             <Image
@@ -40,7 +40,7 @@ const Navbar = () => {
               height={100}
               className="cursor-pointer"
             />
-            <div className="flex gap-2">
+            <div className="flex items-center">
               <NavIcons />
             </div>
           </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
           </div>
 
           {/*  Icons only for xl and up */}
-          <div className="hidden gap-2 xl:flex">
+          <div className="hidden gap-4 xl:flex">
             <Help />
             <NavIcons />
           </div>

@@ -1,4 +1,4 @@
-import { NavigationMenuDemo } from "../dami-menu/dami-menu";
+// import { NavigationMenuDemo } from "../dami-menu/dami-menu";
 import NavMenu from "../nav-menu";
 import Navbar from "../navbar";
 import PromoNavbar from "../promo-navbar";
@@ -9,7 +9,6 @@ const Header = () => {
       <PromoNavbar />
       <Navbar />
       <NavMenu />
-      <NavigationMenuDemo />
     </div>
   );
 };
