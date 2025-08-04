@@ -103,14 +103,14 @@ const categories = [
 
 const NavMenu = () => {
   return (
-    <div className="hidden xl:block">
-      <div className="w-full border-b bg-white px-6">
+    <div className="hidden md:block">
+      <div className="w-full border-b bg-white">
         <div className="w-full">
           <NavigationMenu
             //  viewport={false}
             className="w-full max-w-none justify-start [&>div]:w-full [&>div]:justify-start"
           >
-            <NavigationMenuList className="flex w-full flex-nowrap justify-between px-8">
+            <NavigationMenuList className="flex w-full flex-nowrap justify-between">
               {categories.map((category, index) => {
                 const isLast = index === categories.length - 1;
                 const hasItems =

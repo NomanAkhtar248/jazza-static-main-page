@@ -10,7 +10,7 @@ const Header = () => {
       <PromoNavbar />
       <Navbar />
       <NavMenu />
-      <ProductPage />
+      {/* <ProductPage /> */}
     </div>
   );
 };

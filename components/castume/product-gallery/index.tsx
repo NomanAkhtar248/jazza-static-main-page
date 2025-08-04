@@ -23,7 +23,7 @@ const ProductPage = () => {
         <DialogContent className="mx-auto w-[90%] p-4 sm:w-[80%] sm:max-w-3xl md:w-[80%] md:max-w-4xl lg:w-[75%] lg:max-w-5xl xl:w-[70%]">
           <div className="flex h-full flex-col xl:flex-row">
             {/* Left Side - Image */}
-            <div className="relative aspect-[4/3] w-full sm:aspect-[6/5] md:aspect-[6/5] xl:aspect-square xl:w-[70%]">
+            <div className="relative aspect-[4/3] w-full sm:aspect-[2/5] md:aspect-[6/5] xl:aspect-square xl:w-[70%]">
               <Image
                 src="/watch.webp"
                 alt="Product Image"
@@ -45,7 +45,7 @@ const ProductPage = () => {
             {/* Right Side */}
             <div className="hidden w-full flex-col overflow-y-auto xl:flex xl:w-[30%]">
               <DialogHeader className="mt-6 pb-4">
-                <DialogTitle>
+                <DialogTitle className="leading-normal">
                   【🔥Malaysia Stock🔥】 DW6900 full black UNISEX WATCH JAM
                   TANGAN
                 </DialogTitle>
@@ -54,7 +54,7 @@ const ProductPage = () => {
               <div className="mt-4 px-8">
                 <div className="grid grid-cols-3 gap-3">
                   {[...Array(9)].map((_, i) => {
-                    const src = `/iphone-${(i % 4) + 1}.webp`;
+                    const src = `/ iphone-${(i % 4) + 1}.webp`;
                     return (
                       <div
                         key={i}

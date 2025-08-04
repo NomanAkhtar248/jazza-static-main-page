@@ -9,7 +9,7 @@ const NavMenuLink = ({
   isLast: boolean;
 }) => {
   return (
-    <NavigationMenuLink asChild className="">
+    <NavigationMenuLink asChild>
       <div className="transition-colors duration-200 hover:bg-[#f9f1f6]">
         <div className="px-4 py-2">
           <Link
