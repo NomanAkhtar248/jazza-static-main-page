@@ -116,12 +116,22 @@ const NavMenu = () => {
                 const hasItems =
                   Array.isArray(category.items) && category.items.length > 0;
 
+                const visibilityClass = (() => {
+                  if (index < 7) return ""; // Always show
+                  if (index < 10) return "hidden md:inline-flex";
+                  if (index < 11) return "hidden lg:inline-flex";
+                  return "hidden xl:inline-flex";
+                })();
+
                 // If category has items, show trigger + dropdown
 
                 if (hasItems) {
                   return (
                     // <NavigationMenu key={category.id}>
-                    <NavigationMenuItem key={category.id}>
+                    <NavigationMenuItem
+                      key={category.id}
+                      className={visibilityClass}
+                    >
                       <NavigationMenuTrigger className="whitespace-nowrap !bg-transparent hover:!bg-transparent hover:!text-[#7f19a0] [&>svg]:hidden">
                         <span className="font-montserrat cursor-pointer font-semibold">
                           {category.name}
@@ -152,7 +162,10 @@ const NavMenu = () => {
 
                 // Else, show simple link (no dropdown at all)
                 return (
-                  <NavigationMenuItem key={category.id}>
+                  <NavigationMenuItem
+                    key={category.id}
+                    className={visibilityClass}
+                  >
                     <NavigationMenuLink
                       asChild
                       className={navigationMenuTriggerStyle()}
