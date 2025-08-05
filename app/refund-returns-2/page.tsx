@@ -18,7 +18,7 @@ const RefundReturns = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl">
+        <div className="max-w-6xl">
           <form action={formAction} className="space-y-6">
             {/* Name and Email */}
             <div className="grid-cols grid gap-4 md:grid-cols-2">
