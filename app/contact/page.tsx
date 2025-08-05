@@ -8,7 +8,7 @@ import { postContact } from "./actions";
 
 const ContactPage = () => {
   const [message, formAction, isPending] = useActionState(postContact, null);
-
+  console.log(message);
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Main Content */}
@@ -122,6 +122,7 @@ const ContactPage = () => {
 
                 <Button
                   type="submit"
+                  disabled={isPending}
                   className="bg-black px-8 text-white hover:bg-gray-800"
                 >
                   SEND MESSAGE
