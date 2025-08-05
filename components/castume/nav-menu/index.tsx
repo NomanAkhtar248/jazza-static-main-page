@@ -106,10 +106,7 @@ const NavMenu = () => {
     <div className="hidden md:block">
       <div className="w-full border-b bg-white">
         <div className="w-full">
-          <NavigationMenu
-            //  viewport={false}
-            className="w-full max-w-none justify-start [&>div]:w-full [&>div]:justify-start"
-          >
+          <NavigationMenu className="w-full max-w-none justify-start [&>div]:w-full [&>div]:justify-start">
             <NavigationMenuList className="flex w-full flex-nowrap justify-between">
               {categories.map((category, index) => {
                 const isLast = index === categories.length - 1;
@@ -117,34 +114,26 @@ const NavMenu = () => {
                   Array.isArray(category.items) && category.items.length > 0;
 
                 const visibilityClass = (() => {
-                  if (index < 7) return ""; // Always show
-                  if (index < 10) return "hidden md:inline-flex";
-                  if (index < 11) return "hidden lg:inline-flex";
-                  return "hidden xl:inline-flex";
+                  if (index < 5 || index >= 9) return "flex"; // md: show first 7 items (0-6)
+                  if (index < 10) return "hidden lg:flex"; // lg: show first 10 items (0-9)
+                  return "hidden xl:flex"; // xl: show all 11 items (0-10)
                 })();
 
                 // If category has items, show trigger + dropdown
-
                 if (hasItems) {
                   return (
-                    // <NavigationMenu key={category.id}>
                     <NavigationMenuItem
                       key={category.id}
                       className={visibilityClass}
                     >
                       <NavigationMenuTrigger className="whitespace-nowrap !bg-transparent hover:!bg-transparent hover:!text-[#7f19a0] [&>svg]:hidden">
-                        <span className="font-montserrat cursor-pointer font-semibold">
+                        <span className="font-montserrat cursor-pointer text-xs font-semibold">
                           {category.name}
                         </span>
                       </NavigationMenuTrigger>
 
-                      {/*  Use your custom component here */}
-
                       <NavigationMenuContent className="m-1">
-                        <ul
-                          // className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
-                          className="m-0 grid w-[210px] p-0 py-1"
-                        >
+                        <ul className="m-0 grid w-[210px] p-0 py-1">
                           {category.items?.map((item, i) => (
                             <li key={item.id}>
                               <NavMenuLink
@@ -156,7 +145,6 @@ const NavMenu = () => {
                         </ul>
                       </NavigationMenuContent>
                     </NavigationMenuItem>
-                    // </NavigationMenu>
                   );
                 }
 
@@ -178,12 +166,10 @@ const NavMenu = () => {
                             : ""
                         }`}
                       >
-                        {/* Wrap both name + icon + image in flex */}
-                        <span className="font-montserrat flex items-center gap-1 font-semibold">
+                        <span className="font-montserrat flex items-center gap-1 text-xs font-semibold">
                           {category.name}
 
                           {/* Icon (like Revibe Express) */}
-
                           {category.icon &&
                             (() => {
                               const Icon = category.icon;
@@ -193,7 +179,6 @@ const NavMenu = () => {
                             })()}
 
                           {/* Image (like Hot Deals) */}
-
                           {category.imageUrl && (
                             <Image
                               src={category.imageUrl}
