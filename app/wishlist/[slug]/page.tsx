@@ -1,4 +1,5 @@
 import { products } from "../data";
+import WishlistButton from "../wishlist";
 
 export default async function ProductDetail({
   params,
@@ -8,7 +9,7 @@ export default async function ProductDetail({
   // console.log("Params slug:", params.slug);
   // console.log("All products:", products);
   const slug = (await params).slug;
-  console.log("slug: ", slug);
+  // console.log("slug: ", slug);
   const product = products.find((p) => p.slug === slug);
   console.log("product: ", product);
   if (!product) {
@@ -17,10 +18,11 @@ export default async function ProductDetail({
 
   return (
     <div className="p-6">
-      <div>My Post: {slug}</div>
+      {/* <div>My Post: {slug}</div> */}
       <h2>Hello world</h2>
       <h1 className="mb-4 text-3xl font-bold">{product.title}</h1>
       <p className="text-gray-600">{product.description}</p>
+      <WishlistButton productId={product.id} />
     </div>
   );
 }
