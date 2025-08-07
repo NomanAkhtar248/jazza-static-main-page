@@ -11,6 +11,13 @@ import { products } from "./data";
 import React from "react";
 import WishlistButton from "./wishlist";
 
+type Product = {
+  id: number;
+  title: string;
+  description: string;
+  slug: string;
+};
+
 const ProductCard = () => {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -23,7 +30,7 @@ const ProductCard = () => {
   );
 };
 
-const ProductRow = ({ product }) => {
+const ProductRow = ({ product }: { product: Product }) => {
   return (
     <>
       <Card key={product.id} className="max-w-xs shadow-none">
@@ -45,7 +52,7 @@ const ProductRow = ({ product }) => {
               Explore <ArrowRight className="ml-2" />
             </Button>
           </Link>
-          <WishlistButton productId={product.id} />
+          <WishlistButton productTitle={product.title} />
         </CardFooter>
       </Card>
     </>

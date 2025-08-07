@@ -3,43 +3,51 @@
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
 
+interface WishlistButtonProps {
+  productTitle: string;
+  setApiWishlistProducts?: (products: number[]) => void;
+  updateParent?: boolean;
+}
+
 const WishlistButton = ({
-  productId,
+  productTitle,
   setApiWishlistProducts,
   updateParent = false,
-}: {
-  productId: number;
-}) => {
+}: WishlistButtonProps) => {
   const [btnText, setBtnText] = useState("Add To Wishlist");
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
       const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
-
-      if (wishlist.includes(productId)) {
+      if (wishlist.includes(productTitle)) {
         setBtnText("Remove From Wishlist");
       }
     }
-  }, []);
+  }, [productTitle]);
 
   const handleWishlist = () => {
-    let wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    if (typeof window !== "undefined" && window.localStorage) {
+      let wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
 
-    if (wishlist.includes(productId)) {
-      wishlist = wishlist.filter((id: number) => id !== productId);
-      setBtnText("Add To Wishlist");
-    } else {
-      wishlist.push(productId);
-      setBtnText("Remove From Wishlist");
+      if (wishlist.includes(productTitle)) {
+        wishlist = wishlist.filter((title: string) => title !== productTitle);
+        setBtnText("Add To Wishlist");
+      } else {
+        wishlist.push(productTitle);
+        setBtnText("Remove From Wishlist");
+      }
+
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+      if (updateParent && typeof setApiWishlistProducts === "function") {
+        setApiWishlistProducts(wishlist);
+      }
     }
-
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    if (updateParent) setApiWishlistProducts(wishlist);
   };
 
   return (
     <div>
-      <Button onClick={() => handleWishlist()}>{btnText}</Button>
+      <Button onClick={handleWishlist}>{btnText}</Button>
     </div>
   );
 };

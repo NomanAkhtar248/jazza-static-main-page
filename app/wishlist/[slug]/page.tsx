@@ -22,7 +22,7 @@ export default async function ProductDetail({
       <h2>Hello world</h2>
       <h1 className="mb-4 text-3xl font-bold">{product.title}</h1>
       <p className="text-gray-600">{product.description}</p>
-      <WishlistButton productId={product.id} />
+      <WishlistButton productTitle={product.title} />
     </div>
   );
 }
