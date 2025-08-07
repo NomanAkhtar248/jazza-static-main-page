@@ -58,7 +58,7 @@ const WishlistPage = () => {
         (title: string) => title !== productTitle,
       );
 
-      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+      // localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
 
       const updatedProducts = ApiWishlistProducts.filter(
         (product) => product.title !== productTitle,
