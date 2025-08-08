@@ -16,38 +16,19 @@ const WishlistPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [ApiWishlistProducts, setApiWishlistProducts] = useState<Product[]>([]);
 
-  useEffect(
-    () => {
-      if (typeof window !== "undefined" && window.localStorage) {
-        const localWishlist = JSON.parse(
-          localStorage.getItem("wishlist") || "[]",
-        );
-        const filteredProducts = products.filter((product) =>
-          localWishlist.includes(product.title),
-        );
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const localWishlist = JSON.parse(
+        localStorage.getItem("wishlist") || "[]",
+      );
+      const filteredProducts = products.filter((product) =>
+        localWishlist.includes(product.title),
+      );
 
-        setApiWishlistProducts(filteredProducts);
-        setIsLoading(false);
-
-        // if (!ApiWishlistProducts.length) {
-        //   // Initial fetch
-        //   const filteredProducts = products.filter((product) =>
-        //     localWishlist.includes(product.id),
-        //   );
-        //   setApiWishlistProducts(filteredProducts);
-        //   setIsLoading(false);
-        // } else {
-        //   // Sync: Remove items that are no longer in localStorage
-        //   const updatedProducts = ApiWishlistProducts.filter((product) =>
-        //     localWishlist.includes(product.id),
-        //   );
-        //   setApiWishlistProducts(updatedProducts);
-        // }
-      }
-    },
-    [],
-    // [ApiWishlistProducts]
-  );
+      setApiWishlistProducts(filteredProducts);
+      setIsLoading(false);
+    }
+  }, []);
 
   const handleRemove = (productTitle: string) => {
     if (typeof window !== "undefined" && window.localStorage) {

@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "title": "iPhone 13 Pro Max",
+        "price": "AED 1,699",
+        "discount": "-49% vs new",
+        "imgUrl": "/images/i1.png",
+        "colors": [
+            "#2D2D2D",
+            "#D4AF37",
+            "#C0C0C0",
+            "#228B22"
+        ],
+        "additionalColors": 1,
+        "isLiked": false
+    },
+    {
+        "id": 2,
+        "title": "Samsung Galaxy S23",
+        "price": "AED 1,299",
+        "discount": "-35% vs new",
+        "imgUrl": "/images/i2.png",
+        "colors": [
+            "#000000",
+            "#FFFFFF",
+            "#FFB6C1"
+        ],
+        "additionalColors": 2,
+        "isLiked": true
+    },
+    {
+        "id": 3,
+        "title": "MacBook Air M2",
+        "price": "AED 2,999",
+        "discount": "-25% vs new",
+        "imgUrl": "/images/i3.png",
+        "colors": [
+            "#C0C0C0",
+            "#FFD700",
+            "#708090"
+        ],
+        "additionalColors": 0,
+        "isLiked": false
+    },
+    {
+        "id": 4,
+        "title": "iPad Pro 11\"",
+        "price": "AED 1,899",
+        "discount": "-40% vs new",
+        "imgUrl": "/images/i1.png",
+        "colors": [
+            "#C0C0C0",
+            "#2D2D2D"
+        ],
+        "additionalColors": 3,
+        "isLiked": true
+    },
+    {
+        "id": 5,
+        "title": "AirPods Pro",
+        "price": "AED 599",
+        "discount": "-30% vs new",
+        "imgUrl": "/images/i2.png",
+        "colors": [
+            "#FFFFFF"
+        ],
+        "additionalColors": 0,
+        "isLiked": false
+    },
+    {
+        "id": 6,
+        "title": "Apple Watch Series 8",
+        "price": "AED 999",
+        "discount": "-45% vs new",
+        "imgUrl": "/images/i3.png",
+        "colors": [
+            "#2D2D2D",
+            "#C0C0C0",
+            "#FFB6C1",
+            "#228B22"
+        ],
+        "additionalColors": 2,
+        "isLiked": true
+    }
+]
