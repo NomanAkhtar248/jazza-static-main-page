@@ -7,26 +7,26 @@ import ShowMoreLessWrapper from "./button/show-more-button";
 // import FilterSection from "./FilterSection";
 
 const categories = [
-  "Acer (4)",
-  "Apple (195)",
-  "AWEI (16)",
-  "Dell (105)",
-  "Fitbit (1)",
-  "HP (91)",
-  "Huawei (3)",
-  "JBL (13)",
-  "Lenovo (60)",
-  "Microsoft (9)",
-  "Oppo (7)",
-  "Samsung (29)",
-  "Sennheiser (7)",
-  "Shark (1)",
-  "Sony (1)",
+  "0-gen (20)",
+  "1st-gen (9)",
+  "2nd-gen (14)",
+  "3rd-gen (19)",
+  "4th-gen (35)",
+  "5th-gen (26)",
+  "6th-gen (60)",
+  "7th-gen (37)",
+  "8th-gen (48)",
+  "9th-gen (4)",
+  "10th-gen (7)",
+  "11th-gen (7)",
+  "7th Gen (1)",
+  "10th gen (2)",
+  "10th Gen (1)",
 ];
 
-export default function BrandFilter() {
+export default function GenerationFilter() {
   return (
-    <FilterSection title="Brand">
+    <FilterSection title="Generation">
       <ShowMoreLessWrapper
         title=""
         allItems={categories}

@@ -7,26 +7,34 @@ import ShowMoreLessWrapper from "./button/show-more-button";
 // import FilterSection from "./FilterSection";
 
 const categories = [
-  "Acer (4)",
-  "Apple (195)",
-  "AWEI (16)",
-  "Dell (105)",
-  "Fitbit (1)",
-  "HP (91)",
-  "Huawei (3)",
-  "JBL (13)",
-  "Lenovo (60)",
-  "Microsoft (9)",
-  "Oppo (7)",
-  "Samsung (29)",
-  "Sennheiser (7)",
-  "Shark (1)",
-  "Sony (1)",
+  '7.9" (5)',
+  '9.7" (16)',
+  '10.3" (4)',
+  '10.5" (2)',
+  '11" (3)',
+  '11.6" (17)',
+  '12" (1)',
+  '12.3" (12)',
+  '12.5" (24)',
+  '12.9" (5)',
+  '13" (11)',
+  '13.3" (97)',
+  '13.5" (2)',
+  '14" (119)',
+  '14.1" (2)',
+  '15" (6)',
+  '15.4" (16)',
+  '15.6" (46)',
+  '16" (3)',
+  '17" (1)',
+  '17.3" (4)',
+  '21.5" (4)',
+  '27" (3)',
 ];
 
-export default function BrandFilter() {
+export default function ScreenSizeFilter() {
   return (
-    <FilterSection title="Brand">
+    <FilterSection title="Screen Size">
       <ShowMoreLessWrapper
         title=""
         allItems={categories}
