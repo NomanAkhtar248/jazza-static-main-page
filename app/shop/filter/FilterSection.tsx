@@ -15,8 +15,8 @@ interface FilterSectionProps {
 
 const FilterSection = ({ title, icon: Icon, children }: FilterSectionProps) => (
   <Collapsible defaultOpen>
-    <CollapsibleTrigger className="group flex w-full items-center justify-between py-3">
-      <h3 className="flex items-center gap-2 text-sm font-semibold">
+    <CollapsibleTrigger className="group flex w-80 items-center justify-between py-3">
+      <h3 className="flex items-center gap-2 text-lg font-bold">
         {!!Icon && <Icon className="h-5 w-5" />} {title}
       </h3>
       <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-data-[state=open]:rotate-180" />
